@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AdminLTE 3 | Log in</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+
+</head>
+<body class="hold-transition login-page">
+  <div class="login-box">
+    <div class="login-logo">
+      <a href="../../index2.html"><b>Protocolo</b>Login</a>
+    </div>
+    <!-- /.login-logo -->
+    <div class="card">
+      <div class="card-body login-card-body">
+        <p class="login-box-msg">Sign in to start your session</p>
+        <% if alert %>
+          <div id="login-alert" class="alert alert-danger col-sm-12"><%= flash[:alert]%></div>
+        <% end %>
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="input-group mb-3">
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "Seu email *", id: "login-username" %>
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-envelope"></span>
+              </div>
+            </div>
+          </div>
+          <div class="input-group mb-3">
+            <%= f.password_field :password, autocomplete: "current-password", class: "form-control", placeholder: "Sua senha *", id: "login-password"%>
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-lock"></span>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-8">
+              <div class="icheck-primary">
+                <input type="checkbox" id="remember">
+                <label for="remember">
+                  Remember Me
+                </label>
+              </div>
+            </div>
+            <!-- /.col -->
+            <div class="col-4">
+              <!-- <button type="submit" class="btn btn-primary btn-block">Sign In</button> -->
+              <%= f.submit "Login", class: "btn btn-primary btn-block", id: "btn-login" %>
+            </div>
+            <!-- /.col -->
+          </div>
+        <% end %>
+
+        <div class="social-auth-links text-center mb-3">
+          <p>- OU -</p>
+          <a href="#" class="btn btn-block btn-danger">
+            <i class="fab fa-google-plus mr-2"></i> Sign in com Google+
+          </a>
+        </div>
+        <!-- /.social-auth-links -->
+      </div>
+      <!-- /.login-card-body -->
+    </div>
+  </div>
+  <!-- /.login-box -->
+
+</body>
+</html>
