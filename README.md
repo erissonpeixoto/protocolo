@@ -1,4 +1,3 @@
-# Intersol
 ## _**Sistema de Protocolo**_
 
 Sistema de Protocolo criado no padrão API para facilitar a comunição e integração entre outros sistemas internos e externos.
